@@ -11,7 +11,6 @@ import java.util.Scanner;
 
 import clueGame.RoomCell.DoorDirection;
 
-	
 
 public class Board {
 		
@@ -212,11 +211,18 @@ public class Board {
 	
 	public void calcAdjacencies() {
 		for (int i = 0; i < ((numColumns) * (numRows)); i++) {
-			adjacencyMatrix.put(i, getAdjList(i));
+			adjacencyMatrix.put(i, calcAdjacencyHelper(i));
 		}
 	}
 	
-	public LinkedList<Integer> getAdjList(int Location) {
+	public LinkedList<Integer> getAdjacencies( int location){
+		LinkedList<Integer> adjList = new LinkedList<Integer>();
+		adjList = adjacencyMatrix.get(location);
+		return adjList;
+		
+	}
+	
+	public LinkedList<Integer> calcAdjacencyHelper(int Location) {
 		LinkedList<Integer> adjList = new LinkedList<Integer>();
 		int row, column;
 		BoardCell currCell;

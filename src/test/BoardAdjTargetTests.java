@@ -34,7 +34,7 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencySurroundedbyWalkways() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(17, 7));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(17, 7));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(17, 6)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(17, 8)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(16, 7)));
@@ -44,7 +44,7 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencyBoardEdge1() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(17, 0));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(17, 0));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(16, 0)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(17, 1)));
 		Assert.assertEquals(2, testList.size());
@@ -52,7 +52,7 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencyBoardEdge2() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(24, 7));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(24, 7));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(24, 6)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(23, 7)));
 		Assert.assertEquals(2, testList.size());
@@ -60,7 +60,7 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencyBoardEdge3() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(16, 24));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(16, 24));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(15, 24)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(16, 23)));
 		Assert.assertEquals(2, testList.size());
@@ -68,7 +68,7 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencyBoardEdge4() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(6, 24));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(6, 24));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(7, 24)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(6, 23)));
 		Assert.assertEquals(2, testList.size());
@@ -76,7 +76,7 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencyNexttoRoomNotDoor1() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(9, 6));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(9, 6));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(8, 6)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(10, 6)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(9, 7)));
@@ -85,7 +85,7 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencyNexttoRoomNotDoor2() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(7, 19));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(7, 19));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(7, 18)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(7, 20)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(6, 19)));
@@ -94,7 +94,7 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencyNexttoValidDoor1() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(12, 6));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(12, 6));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(12, 5)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(12, 7)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(11, 6)));
@@ -103,7 +103,7 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencyNexttoValidDoor2() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(20, 18));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(20, 18));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(20, 17)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(20, 19)));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(21, 18)));
@@ -112,14 +112,14 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testAdjacencyFromDoor1() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(6, 2));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(6, 2));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(7, 2)));
 		Assert.assertEquals(1, testList.size());
 	}
 	
 	@Test
 	public void testAdjacencyFromDoor2() {
-		testList = testBoard.getAdjList(testBoard.calcIndex(19, 11));
+		testList = testBoard.calcAdjacencyHelper(testBoard.calcIndex(19, 11));
 		Assert.assertTrue(testList.contains(testBoard.calcIndex(18, 11)));
 		Assert.assertEquals(1, testList.size());
 	}
