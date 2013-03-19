@@ -23,21 +23,10 @@ public class Board {
 	private boolean[] visited ;
 	private HashSet<BoardCell> targets;
 	private String mapFile = "clueMap.csv", legendFile = "clueLegend.csv";
-	private int wipe;
 	
 	
-	public Board() {
-		super();
-		rooms = new HashMap<Character, String>();
-		adjacencyMatrix = new HashMap<Integer, LinkedList<Integer>>();
-		targets = new HashSet<BoardCell>();
-		loadConfigFiles();
-		visited = new boolean[(numRows)*(numColumns)];
-		for(int i=0;i<((numRows)*(numColumns));i++)
-			visited[i]=false;
-
-		calcAdjacencies();
-	}
+	
+	
 	
 	public Board(String mapFile, String legendFile) {
 		super();
