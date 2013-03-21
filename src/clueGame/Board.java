@@ -26,7 +26,9 @@ public class Board {
 	
 	
 	
-	
+	public Board(){
+		this("clueMap.csv", "clueLegend.csv");
+	}
 	
 	public Board(String mapFile, String legendFile) {
 		super();
