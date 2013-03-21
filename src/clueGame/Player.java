@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Player {
 	private String name;
-	ArrayList<Object> listOfCards;
+	public ArrayList<Card> listOfCards;
 	
 	public Player(){
 		

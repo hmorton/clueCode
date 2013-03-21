@@ -3,11 +3,19 @@ package clueGame;
 import java.util.ArrayList;
 
 public class ClueGame {
-	ArrayList<Card> deck;
-	ArrayList<Player> players;
+	public ArrayList<Card> deck;
+	public ArrayList<Player> players;
 	//test
+	
+	public ClueGame(){
+		deck = new ArrayList<Card>();
+		players = new ArrayList<Player>();
+	}
+	
+	
 	public void deal(){
 	}
+	
 	public void loadConfigFiles(){
 		
 		try {
@@ -28,6 +36,7 @@ public class ClueGame {
 	
 	public void selectAnswer(){
 	}
+	
 	public void handleSuggestion(String person,String room,String weapon,Player accusingPerson){
 		
 	}
