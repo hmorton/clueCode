@@ -37,7 +37,7 @@ public class Board {
 		this.mapFile = mapFile;
 		this.legendFile = legendFile;
 		targets = new HashSet<BoardCell>();
-		loadConfigFiles();
+		loadBoardConfigFiles();
 		visited = new boolean[(numRows)*(numColumns)];
 		for(int i=0;i<((numRows)*(numColumns));i++)
 			visited[i]=false;
@@ -62,7 +62,7 @@ public class Board {
 		}
 	}
 	
-	public void loadConfigFiles() throws BadConfigFormatException {
+	public void loadBoardConfigFiles() throws BadConfigFormatException {
 
 		initMapReader();
 		initLegendReader();

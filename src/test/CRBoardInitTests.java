@@ -73,7 +73,7 @@ public class CRBoardInitTests {
 		room = board.getRoomCellAt(14, 14);
 		assertFalse(room.isDoorway());	
 		// Test that walkways are not doors
-		BoardCell cell = board.getCellAt(board.calcIndex(0, 6));
+		BoardCell cell = Board.getCellAt(board.calcIndex(0, 6));
 		assertFalse(cell.isDoorway());		
 
 	}
@@ -87,7 +87,7 @@ public class CRBoardInitTests {
 		Assert.assertEquals(506, totalCells);
 		for (int i=0; i<totalCells; i++)
 		{
-			BoardCell cell = board.getCellAt(i);
+			BoardCell cell = Board.getCellAt(i);
 			if (cell.isDoorway())
 				numDoors++;
 		}
